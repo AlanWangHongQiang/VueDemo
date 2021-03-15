@@ -7,6 +7,7 @@
     <script src="../components/button-container.js"></script>
     <script src="../components/base-input.js"></script>
     <script src="../components/slot-demo.js"></script>
+    <script src="../components/button-transition.js"></script>
 </head>
 <style>
     .red {
@@ -15,6 +16,23 @@
 
     .blue {
         color: blue;
+    }
+
+    .fade1-enter-active,
+    .fade1-leave-active {
+        transition: opacity 5s;
+    }
+
+    /* .fade1-enter, */
+    .fade1-leave-to
+
+    /* .fade-leave-active below version 2.1.8 */
+        {
+        opacity: 0;
+    }
+
+    .fade1-enter{
+        opacity: 0.5;
     }
 </style>
 
@@ -33,7 +51,7 @@
         <div :style="{'color' : 'red'}">
             I will be red again and again
         </div>
-       
+
         <div :title="{'fuck you' : isActive}">
             title will be fuck you if isActive equal true
         </div>
@@ -72,7 +90,7 @@
             <span>Selected: {{ selected }}</span>
 
             <input type="checkbox" v-model="toggle" true-value="yes" false-value="no"> abc
-            <label for="" >{{toggle}}</label>
+            <label for="">{{toggle}}</label>
 
             <input v-model.number="age" type="number">
 
@@ -87,12 +105,14 @@
             <button-container></button-container>
         </div>
         <div>
-            <base-input v-model='username' label='qiang' ref="usernameInput"  required placeholder='username'></base-input>
+            <base-input v-model='username' label='qiang' ref="usernameInput" required placeholder='username'>
+            </base-input>
         </div>
         <slot-demo>
             <button-container></button-container>
             abcd
         </slot-demo>
+        <button-transition></button-transition>
     </div>
 
 </body>
