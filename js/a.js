@@ -8,8 +8,8 @@ var data = {
     job:{
         jobMessage : 'Job Mesage',
         jobList : [
-            {message:'job1'},
-            {message:'job2'}
+            {message:'job1',index : '2'},
+            {message:'job2',index : '3'}
         ]
     },
     items : [
